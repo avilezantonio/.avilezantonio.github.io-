@@ -1,0 +1,206 @@
+<html>
+
+
+<head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+
+	window.onclick = function(event) {
+	
+		if(event.srcElement.localName && event.srcElement.localName == 'body'){
+				hideMenus();
+		}
+	}
+	
+	function hideMenus(){
+			hideMenu2();
+			hideMenu3();
+	}
+	function showMenu2(){
+		document.getElementById("secondMenu").style.display = 'block';
+	}
+	
+	function hideMenu2(){
+		document.getElementById("secondMenu").style.display = 'none';
+	}
+	
+	function showMenu3(){
+		document.getElementById("thirdMenu").style.display = 'block';
+	}
+	
+	function hideMenu3(){
+		document.getElementById("thirdMenu").style.display = 'none';
+	}
+	
+	
+
+</script>
+
+
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f9f9f9;
+    min-width: 300px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content-2 {
+    display: none;
+    position: relative;
+    background-color: #f9f9f9;
+    min-width: 300px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.dropdown-content-2 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+</style>
+
+
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse" id="firstMenu" >
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active" onclick="showMenu2()">
+					<a class="nav-link" href="#">HOME</a>
+				</li>
+				<li class="nav-item " onclick="showMenu2()">
+					<a class="nav-link" href="#">FREIGHTLINER</a>
+				</li>
+				<li class="nav-item " onclick="showMenu2()">
+					<a class="nav-link" href="#">MERCEDES-BENZ</a>
+				</li>
+				<li class="nav-item " onclick="showMenu2()">
+					<a class="nav-link" href="#">POST-VENTA</a>
+				</li>
+				<li class="nav-item " onclick="showMenu2()">
+					<a class="nav-link" href="#">USADOS</a>
+				</li>
+				<li class="nav-item " onclick="showMenu2()">
+					<a class="nav-link" href="#">DESARROLLO DE DISTRIBUIDORES</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	
+	<div id="secondMenu" class="dropdown-content" style="display:none;">
+	<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item " onclick="showMenu3()">
+					<a class="nav-link" href="#">Capacitación Comercial</a>
+				</li>
+				<li class="nav-item " onclick="showMenu3()">
+					<a class="nav-link" href="#">Garantías</a>
+				</li>
+				<li class="nav-item " onclick="showMenu3()">
+					<a class="nav-link" href="#">Literatura Camiones</a>
+				</li>
+				<li class="nav-item " onclick="showMenu3()">
+					<a class="nav-link" href="#">Literatura Autobuses</a>
+				</li>
+				<li class="nav-item " onclick="showMenu3()">
+					<a class="nav-link" href="#">Refaciones</a>
+				</li>
+				<li class="nav-item " onclick="showMenu3()">
+					<a class="nav-link" href="#">Soporte Marca</a>
+				</li>
+				<li class="nav-item " onclick="showMenu3()">
+					<a class="nav-link" href="#">Indicadores</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	</div>
+	
+	<div id="thirdMenu" class="dropdown-content-2" style="display:none;">
+	<nav class="navbar navbar-toggleable-md navbar-light bg-faded" >
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item " onclick="hideMenus()">
+					<a class="nav-link" href="#">Información de Servicio</a>
+				</li>
+				<li class="nav-item " onclick="hideMenus()">
+					<a class="nav-link" href="#">Cartas de Campañas</a>
+				</li>
+				<li class="nav-item " onclick="hideMenus()">
+					<a class="nav-link" href="#">Cross Reference</a>
+				</li>
+				<li class="nav-item " onclick="hideMenus()">
+					<a class="nav-link" href="#">Enlaces</a>
+				</li>
+				<li class="nav-item " onclick="hideMenus()">
+					<a class="nav-link" href="#">Manuales</a>
+				</li>
+				<li class="nav-item " onclick="hideMenus()">
+					<a class="nav-link" href="#">Diagramas</a>
+				</li>
+				<li class="nav-item " onclick="hideMenus()">
+					<a class="nav-link" href="#">Mantenimiento</a>
+				</li>
+				<li class="nav-item " onclick="hideMenus()">
+					<a class="nav-link" href="#">Garantías</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	</div>
+
+
+</body>
+
+
+
+
+
+
+</html>
