@@ -11,6 +11,9 @@
 
 <script type="text/javascript">
 
+
+	var breadCumbList;
+	
 	window.onclick = function(event) {
 	
 		if(event.srcElement.localName && event.srcElement.localName == 'body'){
@@ -22,20 +25,45 @@
 			hideMenu2();
 			hideMenu3();
 	}
-	function showMenu2(){
+	function updateBreadCumbOne(sMenuName){
 		document.getElementById("secondMenu").style.display = 'block';
+		breadCumbList = [];
+		breadCumbList.push(sMenuName);
+		createBreadCump();
+		
 	}
 	
 	function hideMenu2(){
 		document.getElementById("secondMenu").style.display = 'none';
 	}
 	
-	function showMenu3(){
+	function updateBreadCumbTwo(sMenuName){
 		document.getElementById("thirdMenu").style.display = 'block';
+		breadCumbList = [breadCumbList[0], sMenuName];
+		createBreadCump();
 	}
 	
 	function hideMenu3(){
 		document.getElementById("thirdMenu").style.display = 'none';
+	}
+	
+	function updateBreadCumbThree(sMenuName){
+		breadCumbList = [breadCumbList[0],breadCumbList[1], sMenuName];
+		createBreadCump();
+		hideMenus();
+	}
+	
+	function createBreadCump(){
+	
+		var breadCumbMenu = document.getElementById('breadCumb');
+		if(breadCumbMenu){
+			breadCumbMenu.innerHTML = "";
+			for(var i = 0; i < breadCumbList.length; i++){
+				var li = "<li class='breadcrumb-item'><a href='#'>" + breadCumbList[i] +" </a></li>";
+				breadCumbMenu.innerHTML += li;
+			}
+		}
+	
 	}
 	
 	
@@ -107,25 +135,31 @@
 
 <body>
 
+
+	<ol class="breadcrumb" id="breadCumb">
+		<li class="breadcrumb-item"><a href="#">Home</a></li>
+		
+	</ol>
+
 	<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse" id="firstMenu" >
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active" onclick="showMenu2()">
+				<li class="nav-item active" onclick="updateBreadCumbOne('HOME')">
 					<a class="nav-link" href="#">HOME</a>
 				</li>
-				<li class="nav-item " onclick="showMenu2()">
+				<li class="nav-item " onclick="updateBreadCumbOne('FREIGHTLINER')">
 					<a class="nav-link" href="#">FREIGHTLINER</a>
 				</li>
-				<li class="nav-item " onclick="showMenu2()">
+				<li class="nav-item " onclick="updateBreadCumbOne('MERCEDES-BENZ')">
 					<a class="nav-link" href="#">MERCEDES-BENZ</a>
 				</li>
-				<li class="nav-item " onclick="showMenu2()">
+				<li class="nav-item " onclick="updateBreadCumbOne('POST-VENTA')">
 					<a class="nav-link" href="#">POST-VENTA</a>
 				</li>
-				<li class="nav-item " onclick="showMenu2()">
+				<li class="nav-item " onclick="updateBreadCumbOne('USADOS')">
 					<a class="nav-link" href="#">USADOS</a>
 				</li>
-				<li class="nav-item " onclick="showMenu2()">
+				<li class="nav-item " onclick="updateBreadCumbOne('DESARROLLO DE DISTRIBUIDORES')">
 					<a class="nav-link" href="#">DESARROLLO DE DISTRIBUIDORES</a>
 				</li>
 			</ul>
@@ -136,25 +170,25 @@
 	<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item " onclick="showMenu3()">
-					<a class="nav-link" href="#">CapacitaciÃ³n Comercial</a>
+				<li class="nav-item " onclick="updateBreadCumbTwo('Capacitación Comercial')">
+					<a class="nav-link" href="#">Capacitación Comercial</a>
 				</li>
-				<li class="nav-item " onclick="showMenu3()">
-					<a class="nav-link" href="#">GarantÃ­as</a>
+				<li class="nav-item " onclick="updateBreadCumbTwo('Garantías')">
+					<a class="nav-link" href="#">Garantías</a>
 				</li>
-				<li class="nav-item " onclick="showMenu3()">
+				<li class="nav-item " onclick="updateBreadCumbTwo('Literatura Camiones')">
 					<a class="nav-link" href="#">Literatura Camiones</a>
 				</li>
-				<li class="nav-item " onclick="showMenu3()">
+				<li class="nav-item " onclick="updateBreadCumbTwo('Literatura Autobuses')">
 					<a class="nav-link" href="#">Literatura Autobuses</a>
 				</li>
-				<li class="nav-item " onclick="showMenu3()">
+				<li class="nav-item " onclick="updateBreadCumbTwo('Refaciones')">
 					<a class="nav-link" href="#">Refaciones</a>
 				</li>
-				<li class="nav-item " onclick="showMenu3()">
+				<li class="nav-item " onclick="updateBreadCumbTwo('Soporte Marca')">
 					<a class="nav-link" href="#">Soporte Marca</a>
 				</li>
-				<li class="nav-item " onclick="showMenu3()">
+				<li class="nav-item " onclick="updateBreadCumbTwo('Indicadores')">
 					<a class="nav-link" href="#">Indicadores</a>
 				</li>
 			</ul>
@@ -166,29 +200,29 @@
 	<nav class="navbar navbar-toggleable-md navbar-light bg-faded" >
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item " onclick="hideMenus()">
-					<a class="nav-link" href="#">InformaciÃ³n de Servicio</a>
+				<li class="nav-item " onclick="updateBreadCumbThree('Información de Servicio')">
+					<a class="nav-link" href="#">Información de Servicio</a>
 				</li>
-				<li class="nav-item " onclick="hideMenus()">
-					<a class="nav-link" href="#">Cartas de CampaÃ±as</a>
+				<li class="nav-item " onclick="updateBreadCumbThree('Cartas de Campañas')">
+					<a class="nav-link" href="#">Cartas de Campañas</a>
 				</li>
-				<li class="nav-item " onclick="hideMenus()">
+				<li class="nav-item " onclick="updateBreadCumbThree('Cross Reference')">
 					<a class="nav-link" href="#">Cross Reference</a>
 				</li>
-				<li class="nav-item " onclick="hideMenus()">
+				<li class="nav-item " onclick="updateBreadCumbThree('Enlaces')">
 					<a class="nav-link" href="#">Enlaces</a>
 				</li>
-				<li class="nav-item " onclick="hideMenus()">
+				<li class="nav-item " onclick="updateBreadCumbThree('Manuales')">
 					<a class="nav-link" href="#">Manuales</a>
 				</li>
-				<li class="nav-item " onclick="hideMenus()">
+				<li class="nav-item " onclick="updateBreadCumbThree('Diagramas')">
 					<a class="nav-link" href="#">Diagramas</a>
 				</li>
-				<li class="nav-item " onclick="hideMenus()">
+				<li class="nav-item " onclick="updateBreadCumbThree('Mantenimiento')">
 					<a class="nav-link" href="#">Mantenimiento</a>
 				</li>
-				<li class="nav-item " onclick="hideMenus()">
-					<a class="nav-link" href="#">GarantÃ­as</a>
+				<li class="nav-item " onclick="updateBreadCumbThree('Garantías')">
+					<a class="nav-link" href="#">Garantías</a>
 				</li>
 			</ul>
 		</div>
