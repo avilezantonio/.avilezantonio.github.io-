@@ -13,6 +13,7 @@
 
 
 	var breadCumbList;
+	var position = 100;
 	
 	window.onclick = function(event) {
 	
@@ -30,6 +31,8 @@
 		breadCumbList = [];
 		breadCumbList.push(sMenuName);
 		createBreadCump();
+		hideMenu3();
+		
 		
 	}
 	
@@ -119,7 +122,7 @@
 
 .dropdown-content-2 a {
     color: black;
-    padding: 12px 16px;
+    padding: 12px 50px;
     text-decoration: none;
     display: block;
 }
@@ -127,6 +130,14 @@
 .dropdown a:hover {background-color: #f1f1f1}
 
 .show {display:block;}
+
+.bread-center{
+	position: fixed;
+    bottom: 0;
+	width: 100%;
+	top: 200;
+}
+
 </style>
 
 
@@ -135,11 +146,6 @@
 
 <body>
 
-
-	<ol class="breadcrumb" id="breadCumb">
-		<li class="breadcrumb-item"><a href="#">Home</a></li>
-		
-	</ol>
 
 	<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse" id="firstMenu" >
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -227,6 +233,13 @@
 			</ul>
 		</div>
 	</nav>
+	</div>
+
+	
+	<div class="bread-center">
+		<ol class="breadcrumb" id="breadCumb" >
+			<li class="breadcrumb-item"><a href="#">Home</a></li>
+		</ol>
 	</div>
 
 
