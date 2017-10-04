@@ -27,33 +27,42 @@ var SpotifyService = (function () {
         this.artistas = [];
         this.urlSearch = "https://api.spotify.com/v1/search";
         this.urlArtista = "https://api.spotify.com/v1/artists/";
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
     }
     //https://api.spotify.com/v1/artists/{id}/top-tracks
     SpotifyService.prototype.getArtistas = function (psFilter) {
         var _this = this;
         var sQuery = this.urlSearch + ("?q=" + psFilter + "&type=artist");
-        return this.http.get(sQuery)
+        var headers = this.getHeaders();
+        return this.http.get(sQuery, { headers: headers })
             .map(function (res) {
             _this.artistas = res.json().artists.items;
         });
     };
     SpotifyService.prototype.getArtista = function (psId) {
         var sQuery = this.urlArtista + psId;
-        return this.http.get(sQuery)
+        var headers = this.getHeaders();
+        return this.http.get(sQuery, { headers: headers })
             .map(function (res) {
             return res.json();
         });
     };
     SpotifyService.prototype.getTopTracks = function (psId) {
+        var headers = this.getHeaders();
         var sQuery = this.urlArtista + psId + "/top-tracks?country=US";
-        return this.http.get(sQuery)
+        return this.http.get(sQuery, { headers: headers })
             .map(function (res) {
             return res.json().tracks;
         });
     };
+    SpotifyService.prototype.getHeaders = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
+        headers.append('authorization', 'Bearer BQD_8BwShaGTVD7nK6Nrs1Nyua3ngGdeuzrSSpHLykq_9KL0io9_ukkwtr5-hmp_Jle3JpnOAYScK43USTVcmTTQc9y7DC--NzF62x8450Wd1uvRBLR47oIqKFeh3TbJ5woe8MV_XbB8ODV4jU_Is_WogUGaQmR5r2BVtLrhW6dMEYkIIqzzMZN741vwtm8qiQnojTks_WYKBmB727sZpgTYOgC3r5zJg4wySDSfGhDYUkjp7T55JuAG9M4jiUjbvyrYb8iuxk-2FPJhlLj6J5xTzfd2FmXY0__brl6O0yVHjYiUoamXq7sk_cEQs32LeEY');
+        return headers;
+    };
     SpotifyService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === 'function' && _a) || Object])
     ], SpotifyService);
     return SpotifyService;
     var _a;

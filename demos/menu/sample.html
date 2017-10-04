@@ -75,6 +75,17 @@
 
 
 <style>
+
+.navbar {
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+}
+
+.navbar-inner {
+    background:transparent;
+}
+
 .dropbtn {
     background-color: #4CAF50;
     color: white;
@@ -144,10 +155,10 @@
 
 </head>
 
-<body>
+<body style="background-color:black">
 
 
-	<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse" id="firstMenu" >
+	<nav class="navbar" style="background-color: transparent; height:10px;text-align: center;position: absolute;font-size: 10px; >
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active" onclick="updateBreadCumbOne('HOME')">
@@ -172,7 +183,7 @@
 		</div>
 	</nav>
 	
-	<div id="secondMenu" class="dropdown-content" style="display:none;">
+	<div id="secondMenu" class="dropdown-content" style="display:block;">
 	<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
@@ -202,7 +213,7 @@
 	</nav>
 	</div>
 	
-	<div id="thirdMenu" class="dropdown-content-2" style="display:none;">
+	<div id="thirdMenu" class="dropdown-content-2" style="display:block;">
 	<nav class="navbar navbar-toggleable-md navbar-light bg-faded" >
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
